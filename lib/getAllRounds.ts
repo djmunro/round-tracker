@@ -4,7 +4,7 @@ import {drizzle} from 'drizzle-orm/planetscale-serverless'
 import {eq} from 'drizzle-orm'
 import { players, playerRounds, rounds } from '@/db/schema'
 
-export async function getAllRounds(): Promise<any[]> {
+export async function getAllRounds(): Promise<Round[]> {
   const conn = connect(config)
   const db = drizzle(conn)
 
