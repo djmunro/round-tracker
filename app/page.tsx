@@ -1,14 +1,8 @@
 import { getAllRounds } from '@/lib/getAllRounds'
 import Image from 'next/image'
 
-export async function getServerSideProps() {
+export default async function Home() {
   const rounds = await getAllRounds()
-
-  // Return the rounds as a prop
-  return { props: { rounds } }
-}
-
-export default function Home({ rounds }: { rounds: Round[]}) {
 
   return (
     <pre>{JSON.stringify(rounds, null, 2)}</pre>
